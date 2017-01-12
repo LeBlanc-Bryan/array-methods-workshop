@@ -7,8 +7,9 @@ var printPositives = nums.forEach(function(x) {
         console.log(x);
     }
 })
-
+//Get positive - Similar to the previous exercise, write a function called getPositives that//
+//takes an array and uses the filter method to return a new array with only the positive numbers.//
   
   
-var printPositives = nums.filter((x) => x>0 );
-console.log(printPositives);
+var getPositives = nums.filter((x) => x>0 );
+console.log(getPositives);
