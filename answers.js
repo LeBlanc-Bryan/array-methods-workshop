@@ -124,6 +124,38 @@ function countChars(str) {
 }
 console.log(countChars("Hello world"));
 
+// functional programming
+
+var numbers = [4,8,15,16,23,42];
+var list = ["eggs", "milk", "bacon"]
+
+function isEven(num) {
+  return num % 2 === 0;
+}
+
+// function isOdd(num) {
+//   return !isEven(num);
+// }
+
+function isEmpty(someList) {
+  return list.length === 0;
+}
+
+function isNotEmpty(someList) {
+  return !isEmpty(list);
+}
+
+var isOdd = negate(isEven)
+console.log(isOdd(numbers))
+
+console.log([1,2,3].filter(isEven));
+console.log([1,2,3].filter(isOdd));
+
+function negate(fn) {
+    return function(x) {
+        return !fn(x);
+}
+}
 
 
 
