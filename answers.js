@@ -87,7 +87,42 @@ function highLow(numArray) {
 return {highest: highGuy, lowest: lowBlow}
 }
 console.log(highLow(testArray));
-    
+
+// Wheel of Fortune
+// Write a function called countChars that takes a string, and returns an object 
+// where the keys are letters, and the value is the number of times that letter appears.
+// For example, with input "hello world", the output should be:
+// {
+//   "h": 1,
+//   "e": 1,
+//   "l": 3,
+//   "o": 2,
+//   "w": 1,
+//   "r": 1,
+//   "d": 1
+// }
+// NOTE: Unlike arrays, objects don't have any ordering on them. When you print your object 
+// on the console, your keys may be displayed in a different order, and it does not matter.
+
+
+function countChars(str) {
+    var letters = {};
+    str
+    .split("")
+    .filter(function(currentLetter) {
+        return currentLetter != " "
+    })
+    .forEach(function(currentLetter) {
+        if(letters[currentLetter]) {
+            letters[currentLetter] = letters[currentLetter] + 1;
+        }
+        else {
+            letters[currentLetter] = 1;
+        }
+    })
+    return letters;
+}
+console.log(countChars("Hello world"));
 
 
 
@@ -98,10 +133,7 @@ console.log(highLow(testArray));
 
 
 
-// numArray2 = [5,4,9,33];
-// console.log(numArray2.reduce(function(a,b) {
-//     return a+b;
-// },0))
+
 
 
 
