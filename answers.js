@@ -40,16 +40,26 @@ var longestWord = function(str) {
     },"")
     }
     console.log(longestWord(myString));
-
-
-
-
-
-
-
-
-
-
+    
+    
+// I'd like to buy a vowel - Write a function called countVowels that takes a string and returns 
+// the number of vowels in the string. You should use Array.prototype.reduce to do your work.
+// For the string "The quick brown fox", the output should be 5 because there is one e, one u, one i and two os.
+// Hint: You can use String.prototype.split again. There is a way to use it to split a string by character.
+// Try to Google it :)
+// Hint 2: You can create an array of vowels and use Array.prototype.indexOf to check if the current letter is a vowel.
+var vowels = ["a","e","i","o","u"];
+var bigolString = "This is a string that I wrote to get an A";
+var countVowels = function(str) {
+    var tempo = str.toLowerCase().split("")
+    return tempo.reduce(function(vowelCount,isVowel) {
+        if((vowels.indexOf(isVowel)) >= 0) {
+            vowelCount = vowelCount + 1;
+        }
+        return vowelCount;
+    },0) 
+}
+console.log(countVowels(bigolString));
 
 
 
