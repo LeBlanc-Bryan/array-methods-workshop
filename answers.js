@@ -61,10 +61,35 @@ var countVowels = function(str) {
 }
 console.log(countVowels(bigolString));
 
+// High? Low?
+// Write a function called highLow that takes an array of numbers, and returns an object with a property 
+// highest containing the highest number, and a property lowest containing the lowest number, 
+// using Array.prototype.reduce.
+// For example, starting with [1, -10, 20, 40, 5], your function should return {highest: 40, lowest: -10}.
+// Hint: Javascript has a special value called Infinity, which is higher than any other number. 
+// See if you can initialize your reduce accumulator with Infinity and -Infinity :)
+var testArray = [1, -10, 20, 40, 5];
+function highLow(numArray) {
+    var highest = function(numArray) {
+       return numArray.reduce(function(high, isHigher){
+            if(high < isHigher) {
+                high = isHigher;
+                high = highest;
+            }
+        },-Infinity)
+    }
+    var lowest = function(numArray) {
+        return numArray.reduce(function(low, isLower){
+            if(low > isLower) {
+                low = isLower;
+                low = lowest;
+            }
+        },Infinity);
+    }
 
-
-
-
+}
+console.log(highLow(testArray));
+    
 
 
 
