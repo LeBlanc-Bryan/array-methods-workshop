@@ -70,23 +70,21 @@ console.log(countVowels(bigolString));
 // See if you can initialize your reduce accumulator with Infinity and -Infinity :)
 var testArray = [1, -10, 20, 40, 5];
 function highLow(numArray) {
-    var highest = function(numArray) {
-       return numArray.reduce(function(high, isHigher){
+    var highGuy = numArray.reduce(function(high, isHigher){
             if(high < isHigher) {
                 high = isHigher;
-                high = highest;
             }
-        },-Infinity)
-    }
-    var lowest = function(numArray) {
-        return numArray.reduce(function(low, isLower){
+            return high;
+        },0)
+    
+    var lowBlow = numArray.reduce(function(low, isLower){
             if(low > isLower) {
                 low = isLower;
-                low = lowest;
             }
-        },Infinity);
-    }
+            return low;
+        },0);
 
+return {highest: highGuy, lowest: lowBlow}
 }
 console.log(highLow(testArray));
     
